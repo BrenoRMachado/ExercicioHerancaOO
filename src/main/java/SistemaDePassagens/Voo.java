@@ -6,10 +6,10 @@ public abstract class Voo {
     private float destino;
     private String dataDoVoo;
 
-    public Voo(float origem, float distancia, float destino, String dataDoVoo)
+    public Voo(float origem, float destino, String dataDoVoo)
     {
         setOrigem(origem);
-        setDistancia(distancia);
+        setDistancia(0);
         setDestino(destino);
         setDataDoVoo(dataDoVoo);
     }
@@ -28,6 +28,10 @@ public abstract class Voo {
         return this.distancia;
     }
     public void setDistancia(float distancia) {
+        if(distancia<=0)
+        {
+            throw new IllegalArgumentException("A distância não pode ser nula ou negativa!");
+        }
         this.distancia = distancia;
     }
 
@@ -51,11 +55,9 @@ public abstract class Voo {
         this.dataDoVoo = dataDoVoo;
     }
 
-
-    //preciso configurar
     public void definirDistancia()
     {
-        this.distancia = 0;
+        setDistancia(calcularDistancia());
     }
     public abstract float calcularDistancia();
     public abstract float calcularPreco();

@@ -2,9 +2,9 @@ package SistemaDePassagens;
 
 public class VooDomestico extends Voo{
 
-    public VooDomestico(String origem, float distancia, String destino, String dataDoVoo)
+    public VooDomestico(float origem, float destino, String dataDoVoo)
     {
-        super(origem,distancia,destino,dataDoVoo);
+        super(origem,destino,dataDoVoo);
     }
 
     @Override
@@ -15,6 +15,6 @@ public class VooDomestico extends Voo{
 
     @Override
     public float calcularPreco() {
-        return 100;
+        return getDistancia() * 100;
     }
 }
