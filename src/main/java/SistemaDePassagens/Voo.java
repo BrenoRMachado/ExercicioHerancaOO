@@ -5,17 +5,19 @@ public abstract class Voo {
     private String destino;
     private Float distancia;
     private String dataDoVoo;
+    private float precoBase;
 
-    public Voo(String origem, String destino, Float distancia, String dataDoVoo)
+    public Voo(String origem, String destino, Float distancia, String dataDoVoo,float precoBase)
     {
         setOrigem(origem);
         setDestino(destino);
         setDistancia(distancia);
         setDataDoVoo(dataDoVoo);
+        setPrecoBase(precoBase);
     }
 
     public String getOrigem() {
-        return origem;
+        return this.origem;
     }
     public void setOrigem(String origem) {
         if (origem.trim().isEmpty()) {
@@ -25,7 +27,7 @@ public abstract class Voo {
     }
 
     public String getDestino() {
-        return destino;
+        return this.destino;
     }
     public void setDestino(String destino) {
         if (destino.trim().isEmpty()) {
@@ -35,7 +37,7 @@ public abstract class Voo {
     }
 
     public Float getDistancia() {
-        return distancia;
+        return this.distancia;
     }
     public void setDistancia(Float distancia) {
         if(distancia <= 0)
@@ -46,13 +48,24 @@ public abstract class Voo {
     }
 
     public String getDataDoVoo() {
-        return dataDoVoo;
+        return this.dataDoVoo;
     }
     public void setDataDoVoo(String dataDoVoo) {
         if (dataDoVoo.trim().isEmpty()) {
             throw new IllegalArgumentException("Data inválida! Está vazia.");
         }
         this.dataDoVoo = dataDoVoo;
+    }
+
+    public float getPrecoBase() {
+        return this.precoBase;
+    }
+    public void setPrecoBase(float precoBase) {
+        if(precoBase <= 0)
+        {
+            throw new IllegalArgumentException("Preço inválido! O preço não pode ser nulo ou negativo");
+        }
+        this.precoBase = precoBase;
     }
 
     public abstract float calcularPreco();
