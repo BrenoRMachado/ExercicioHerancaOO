@@ -18,6 +18,9 @@ public abstract class Voo {
         return origem;
     }
     public void setOrigem(String origem) {
+        if (origem.trim().isEmpty()) {
+            throw new IllegalArgumentException("Origem inválida! Está vazia.");
+        }
         this.origem = origem;
     }
 
@@ -25,6 +28,9 @@ public abstract class Voo {
         return destino;
     }
     public void setDestino(String destino) {
+        if (destino.trim().isEmpty()) {
+            throw new IllegalArgumentException("Destino inválido! Está vazio.");
+        }
         this.destino = destino;
     }
 
@@ -32,6 +38,10 @@ public abstract class Voo {
         return distancia;
     }
     public void setDistancia(Float distancia) {
+        if(distancia <= 0)
+        {
+            throw new IllegalArgumentException("Distância inválida! A distância não pode ser nula ou negativa!");
+        }
         this.distancia = distancia;
     }
 
@@ -39,6 +49,9 @@ public abstract class Voo {
         return dataDoVoo;
     }
     public void setDataDoVoo(String dataDoVoo) {
+        if (dataDoVoo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Data inválida! Está vazia.");
+        }
         this.dataDoVoo = dataDoVoo;
     }
 }
