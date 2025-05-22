@@ -1,12 +1,12 @@
 package SistemaDePassagens;
 
 public abstract class Voo {
-    private String origem;
+    private float origem;
     private float distancia;
-    private String destino;
+    private float destino;
     private String dataDoVoo;
 
-    public Voo(String origem, float distancia, String destino, String dataDoVoo)
+    public Voo(float origem, float distancia, float destino, String dataDoVoo)
     {
         setOrigem(origem);
         setDistancia(distancia);
@@ -14,13 +14,12 @@ public abstract class Voo {
         setDataDoVoo(dataDoVoo);
     }
 
-    public String getOrigem() {
+    public float getOrigem() {
         return this.origem;
     }
-
-    public void setOrigem(String origem) {
-        if (origem.trim().isEmpty()) {
-            throw new IllegalArgumentException("A Origem não pode ser nula!");
+    public void setOrigem(float origem) {
+        if (origem <= 0) {
+            throw new IllegalArgumentException("A Origem não pode ser nula ou negativa!");
         }
         this.origem = origem;
     }
@@ -28,18 +27,16 @@ public abstract class Voo {
     public float getDistancia() {
         return this.distancia;
     }
-
     public void setDistancia(float distancia) {
         this.distancia = distancia;
     }
 
-    public String getDestino() {
+    public float getDestino() {
         return this.destino;
     }
-
-    public void setDestino(String destino) {
-        if (destino.trim().isEmpty()) {
-            throw new IllegalArgumentException("O Destino não pode ser nulo!");
+    public void setDestino(float destino) {
+        if (destino <= 0) {
+            throw new IllegalArgumentException("O Destino não pode ser nulo ou negativo!");
         }
         this.destino = destino;
     }
@@ -47,7 +44,6 @@ public abstract class Voo {
     public String getDataDoVoo() {
         return this.dataDoVoo;
     }
-
     public void setDataDoVoo(String dataDoVoo) {
         if (dataDoVoo.trim().isEmpty()) {
             throw new IllegalArgumentException("A Data do voo não pode ser nula!");
@@ -55,6 +51,8 @@ public abstract class Voo {
         this.dataDoVoo = dataDoVoo;
     }
 
+
+    //preciso configurar
     public void definirDistancia()
     {
         this.distancia = 0;
