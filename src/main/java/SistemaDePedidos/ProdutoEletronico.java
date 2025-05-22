@@ -6,6 +6,8 @@ public class ProdutoEletronico extends Produto{
     {
         super(nome,precoVarejo);
     }
+
+    @Override
     public float obterDesconto(){
         return 0.1f;
     }

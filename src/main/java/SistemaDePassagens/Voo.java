@@ -59,7 +59,12 @@ public abstract class Voo {
     {
         setDistancia(calcularDistancia());
     }
-    public abstract float calcularDistancia();
+
+    public float calcularDistancia()
+    {
+        return getOrigem() - getDestino();
+    }
+
     public abstract float calcularPreco();
 
 }

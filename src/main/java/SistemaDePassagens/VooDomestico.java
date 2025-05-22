@@ -8,12 +8,6 @@ public class VooDomestico extends Voo{
     }
 
     @Override
-    public float calcularDistancia()
-    {
-        return getOrigem() - getDestino();
-    }
-
-    @Override
     public float calcularPreco() {
         return getDistancia() * 100;
     }
