@@ -7,4 +7,8 @@ public class VooDomestico extends Voo{
         super(origem, destino, distancia, dataDoVoo);
     }
 
+    @Override
+    public float calcularPreco() {
+        return 0;
+    }
 }

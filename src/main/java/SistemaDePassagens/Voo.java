@@ -54,4 +54,6 @@ public abstract class Voo {
         }
         this.dataDoVoo = dataDoVoo;
     }
+
+    public abstract float calcularPreco();
 }
