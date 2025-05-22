@@ -42,7 +42,7 @@ public abstract class Voo {
     public void setDistancia(Float distancia) {
         if(distancia <= 0)
         {
-            throw new IllegalArgumentException("Distância inválida! A distância não pode ser nula ou negativa!");
+            throw new IllegalArgumentException("Distância inválida! A distância não pode ser nula ou negativa.");
         }
         this.distancia = distancia;
     }
@@ -63,7 +63,7 @@ public abstract class Voo {
     public void setPrecoBase(float precoBase) {
         if(precoBase <= 0)
         {
-            throw new IllegalArgumentException("Preço inválido! O preço não pode ser nulo ou negativo");
+            throw new IllegalArgumentException("Preço inválido! O preço não pode ser nulo ou negativo.");
         }
         this.precoBase = precoBase;
     }
