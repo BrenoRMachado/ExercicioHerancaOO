@@ -8,7 +8,7 @@ public class ProdutoAlimento extends Produto{
     }
 
     @Override
-    public double calcularPreco()
+    public double calcularPreco(double quantidadeComprada)
     {
         return 0;
     }
