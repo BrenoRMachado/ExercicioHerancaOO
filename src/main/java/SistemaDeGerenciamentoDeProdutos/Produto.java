@@ -45,5 +45,20 @@ public abstract class Produto{
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public abstract double calcularPreco();
+    public void verificarTipoEstoque()
+    {
+        if(this.quantidadeEstoque % 1 != 0)
+        {
+            throw new IllegalArgumentException("A quantidade em estoque deve ser um numero inteiro!");
+        }
+
+    }
+    public void verificarTipoCompra(double quantidadeComprada)
+    {
+        if(quantidadeComprada % 1 != 0)
+        {
+            throw new IllegalArgumentException("É necessário comprar uma quantidade inteira de itens.");
+        }
+    }
+    public abstract double calcularPreco(double quantidadeComprada);
 }

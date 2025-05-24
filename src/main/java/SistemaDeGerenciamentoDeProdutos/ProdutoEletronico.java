@@ -8,8 +8,10 @@ public class ProdutoEletronico extends Produto{
     }
 
     @Override
-    public double calcularPreco()
+    public double calcularPreco(double quantidadeComprada)
     {
-        return 0;
+        verificarTipoEstoque();
+        verificarTipoCompra(quantidadeComprada);
+        return getPrecoUnitario() * quantidadeComprada;
     }
 }
