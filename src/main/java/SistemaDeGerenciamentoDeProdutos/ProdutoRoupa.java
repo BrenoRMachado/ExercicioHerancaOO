@@ -10,6 +10,7 @@ public class ProdutoRoupa extends Produto{
     @Override
     public float calcularPreco()
     {
+        verificarQuantidadeEstoque();
         return 0;
     }
 }

@@ -9,7 +9,7 @@ public abstract class Produto {
     {
         setNome(nome);
         setPrecoUnitario(precoUnitario);
-        setQuantidadeEmEstoque(quantidadeEstoque);
+        setQuantidadeEstoque(quantidadeEstoque);
     }
 
     public String getNome() {
@@ -34,10 +34,10 @@ public abstract class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public float getQuantidadeEmEstoque() {
+    public float getQuantidadeEstoque() {
         return this.quantidadeEstoque;
     }
-    public void setQuantidadeEmEstoque(float quantidadeEmEstoque) {
+    public void setQuantidadeEstoque(float quantidadeEmEstoque) {
         if(quantidadeEmEstoque == 0)
         {
             throw new IllegalArgumentException("A quantidade em estoque não pode ser negativa.");
@@ -53,7 +53,7 @@ public abstract class Produto {
         }
     }
 
-    public void diminuitEstoque(float quantidade)
+    public void diminuirEstoque(float quantidade)
     {
         if(quantidade > this.quantidadeEstoque)
         {
