@@ -2,14 +2,14 @@ package SistemaDeGerenciamentoDeProdutos;
 
 public class ProdutoAlimento extends Produto{
 
-    public ProdutoAlimento(String nome, double precoUnitario, double quantidadeEstoque)
+    public ProdutoAlimento(String nome, double precoKg, double quantidadeEstoque)
     {
-        super(nome, precoUnitario, quantidadeEstoque);
+        super(nome, precoKg, quantidadeEstoque);
     }
 
     @Override
     public double calcularPreco(double quantidadeComprada)
     {
-        return 0;
+        return getPrecoUnitario() * getQuantidadeEstoque();
     }
 }
