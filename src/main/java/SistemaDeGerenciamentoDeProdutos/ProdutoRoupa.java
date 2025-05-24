@@ -1,6 +1,7 @@
 package SistemaDeGerenciamentoDeProdutos;
 
 public class ProdutoRoupa extends Produto{
+    private int desconto;
 
     public ProdutoRoupa(String nome, float precoUnitario, int quantidadeEstoque)
     {
@@ -11,6 +12,9 @@ public class ProdutoRoupa extends Produto{
     public float calcularPreco()
     {
         verificarQuantidadeEstoque();
-        return 0;
+        if(desconto == 0){
+            return getPrecoUnitario();
+        }
+        return getPrecoUnitario() - (getPrecoUnitario() * (this.desconto)/100);
     }
 }

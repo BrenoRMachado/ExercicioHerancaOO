@@ -64,6 +64,9 @@ public abstract class Produto {
         }
 
     }
-
     public abstract float calcularPreco();
+    public void vender(float quantidade)
+    {
+        diminuirEstoque(quantidade);
+    }
 }

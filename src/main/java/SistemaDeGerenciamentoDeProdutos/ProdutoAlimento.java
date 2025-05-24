@@ -10,7 +10,6 @@ public class ProdutoAlimento extends Produto{
     @Override
     public float calcularPreco()
     {
-
-        return 0;
+        return getPrecoUnitario();
     }
 }

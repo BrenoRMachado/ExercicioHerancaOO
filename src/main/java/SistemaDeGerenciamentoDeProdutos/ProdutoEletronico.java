@@ -11,7 +11,6 @@ public class ProdutoEletronico extends Produto{
     public float calcularPreco()
     {
         verificarQuantidadeEstoque();
-
-        return 0;
+        return getPrecoUnitario();
     }
 }
