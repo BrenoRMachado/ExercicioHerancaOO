@@ -60,5 +60,11 @@ public abstract class Produto{
             throw new IllegalArgumentException("É necessário comprar uma quantidade inteira de itens.");
         }
     }
+
+    public void verificarQuantidades(double quantidadeComprada)
+    {
+        verificarTipoEstoque();
+        verificarTipoCompra(quantidadeComprada);
+    }
     public abstract double calcularPreco(double quantidadeComprada);
 }
