@@ -10,6 +10,7 @@ public class ProdutoAlimento extends Produto{
     @Override
     public double calcularPreco(double quantidadeComprada)
     {
+        verificarEstoque(quantidadeComprada);
         return getPrecoUnitario() * getQuantidadeEstoque();
     }
 }

@@ -11,6 +11,7 @@ public class ProdutoEletronico extends Produto{
     public double calcularPreco(double quantidadeComprada)
     {
         verificarQuantidades(quantidadeComprada);
+        verificarEstoque(quantidadeComprada);
         return getPrecoUnitario() * quantidadeComprada;
     }
 }

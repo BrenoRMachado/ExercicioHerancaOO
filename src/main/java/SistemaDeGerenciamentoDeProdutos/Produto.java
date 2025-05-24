@@ -66,5 +66,14 @@ public abstract class Produto{
         verificarTipoEstoque();
         verificarTipoCompra(quantidadeComprada);
     }
+
+    public void verificarEstoque(double quantidadeComprada)
+    {
+        if(quantidadeComprada > this.quantidadeEstoque)
+        {
+            throw new IllegalArgumentException("O estoque está vazio!");
+        }
+        this.quantidadeEstoque -= quantidadeComprada;
+    }
     public abstract double calcularPreco(double quantidadeComprada);
 }
