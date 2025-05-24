@@ -16,6 +16,10 @@ public abstract class Produto{
         return this.nome;
     }
     public void setNome(String nome) {
+        if(nome.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("O nome não pode estar vazio!");
+        }
         this.nome = nome;
     }
 
@@ -23,6 +27,10 @@ public abstract class Produto{
         return this.precoUnitario;
     }
     public void setPrecoUnitario(double precoUnitario) {
+        if(precoUnitario <= 0)
+        {
+            throw new IllegalArgumentException("O preço da unidade não pode ser nulo ou negativo");
+        }
         this.precoUnitario = precoUnitario;
     }
 
@@ -30,6 +38,10 @@ public abstract class Produto{
         return this.quantidadeEstoque;
     }
     public void setQuantidadeEstoque(double quantidadeEstoque) {
+        if(quantidadeEstoque < 0)
+        {
+            throw new IllegalArgumentException("A quantidade em estoque não pode ser negativa");
+        }
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
