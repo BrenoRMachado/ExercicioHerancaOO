@@ -6,4 +6,10 @@ public class ProdutoRoupa extends Produto{
     {
         super(nome, precoUnitario, quantidadeEstoque);
     }
+
+    @Override
+    public double calcularPreco()
+    {
+        return 0;
+    }
 }

@@ -45,5 +45,5 @@ public abstract class Produto{
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-
+    public abstract double calcularPreco();
 }
