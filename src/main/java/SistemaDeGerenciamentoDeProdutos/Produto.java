@@ -3,13 +3,13 @@ package SistemaDeGerenciamentoDeProdutos;
 public abstract class Produto {
     private String nome;
     private float precoUnitario;
-    private int quantidadeEmEstoque;
+    private float quantidadeEstoque;
 
-    public Produto(String nome, float precoUnitario, int quantidadeEmEstoque)
+    public Produto(String nome, float precoUnitario, float quantidadeEstoque)
     {
         setNome(nome);
         setPrecoUnitario(precoUnitario);
-        setQuantidadeEmEstoque(quantidadeEmEstoque);
+        setQuantidadeEmEstoque(quantidadeEstoque);
     }
 
     public String getNome() {
@@ -34,27 +34,36 @@ public abstract class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public int getQuantidadeEmEstoque() {
-        return this.quantidadeEmEstoque;
+    public float getQuantidadeEmEstoque() {
+        return this.quantidadeEstoque;
     }
-    public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
+    public void setQuantidadeEmEstoque(float quantidadeEmEstoque) {
         if(quantidadeEmEstoque == 0)
         {
             throw new IllegalArgumentException("A quantidade em estoque não pode ser negativa.");
         }
-        this.quantidadeEmEstoque = quantidadeEmEstoque;
+        this.quantidadeEstoque = quantidadeEmEstoque;
     }
 
-    public void diminuitEstoque(int quantidade)
+    public void verificarQuantidadeEstoque()
     {
-        if(quantidade > this.quantidadeEmEstoque)
+        if(this.quantidadeEstoque % 1 != 0)
+        {
+            throw new IllegalArgumentException("A Quantidade em estoque deve ser inteira!");
+        }
+    }
+
+    public void diminuitEstoque(float quantidade)
+    {
+        if(quantidade > this.quantidadeEstoque)
         {
             throw new IllegalArgumentException("Estoque insuficiente");
         }else
         {
-            this.quantidadeEmEstoque -= quantidade;
+            this.quantidadeEstoque -= quantidade;
         }
 
     }
+
     public abstract float calcularPreco();
 }

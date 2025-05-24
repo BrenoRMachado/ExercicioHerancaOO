@@ -2,9 +2,9 @@ package SistemaDeGerenciamentoDeProdutos;
 
 public class ProdutoAlimento extends Produto{
 
-    public ProdutoAlimento(String nome, float precoUnitario, int quantidadeEmEstoque)
+    public ProdutoAlimento(String nome, float precoUnitario, int quantidadeEstoque)
     {
-        super(nome, precoUnitario, quantidadeEmEstoque);
+        super(nome, precoUnitario, quantidadeEstoque);
     }
 
     @Override
