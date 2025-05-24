@@ -1,6 +1,6 @@
 package SistemaDeGerenciamentoDeProdutos;
 
-public class ProdutoRoupa extends Produto{
+public class ProdutoRoupa extends ProdutoEstoqueInteiro{
 
     private int desconto;
 
@@ -13,6 +13,9 @@ public class ProdutoRoupa extends Produto{
         return this.desconto;
     }
     public void setDesconto(int desconto) {
+        if (desconto < 0 || desconto > 100) {
+            throw new IllegalArgumentException("Desconto deve ser entre 0 e 100%!");
+        }
         this.desconto = desconto;
     }
 
@@ -21,6 +24,10 @@ public class ProdutoRoupa extends Produto{
     {
         verificarQuantidades(quantidadeComprada);
         verificarEstoque(quantidadeComprada);
-        return getPrecoUnitario() * quantidadeComprada - (getPrecoUnitario() * this.desconto);
+        if(this.desconto == 0 )
+        {
+            return  getPrecoUnitario() * quantidadeComprada;
+        }
+        return getPrecoUnitario() * quantidadeComprada - (getPrecoUnitario() * this.desconto/100);
     }
 }

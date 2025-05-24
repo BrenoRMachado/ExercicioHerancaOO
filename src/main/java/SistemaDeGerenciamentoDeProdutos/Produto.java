@@ -45,28 +45,6 @@ public abstract class Produto{
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public void verificarTipoEstoque()
-    {
-        if(this.quantidadeEstoque % 1 != 0)
-        {
-            throw new IllegalArgumentException("A quantidade em estoque deve ser um numero inteiro!");
-        }
-
-    }
-    public void verificarTipoCompra(double quantidadeComprada)
-    {
-        if(quantidadeComprada % 1 != 0)
-        {
-            throw new IllegalArgumentException("É necessário comprar uma quantidade inteira de itens.");
-        }
-    }
-
-    public void verificarQuantidades(double quantidadeComprada)
-    {
-        verificarTipoEstoque();
-        verificarTipoCompra(quantidadeComprada);
-    }
-
     public void verificarEstoque(double quantidadeComprada)
     {
         if(quantidadeComprada > this.quantidadeEstoque)

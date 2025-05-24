@@ -1,6 +1,6 @@
 package SistemaDeGerenciamentoDeProdutos;
 
-public class ProdutoEletronico extends Produto{
+public class ProdutoEletronico extends ProdutoEstoqueInteiro {
 
     public ProdutoEletronico(String nome, double precoUnitario, double quantidadeEstoque)
     {
