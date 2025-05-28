@@ -13,4 +13,10 @@ public class ContaCorrente extends ContaBancaria{
         setSaldo(valor);
         cobrarTaxa();
     }
+
+    @Override
+    public void sacar()
+    {
+
+    }
 }

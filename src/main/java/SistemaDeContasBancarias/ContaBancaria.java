@@ -57,4 +57,6 @@ public abstract class ContaBancaria {
         }
         this.saldo -= 10;
     }
+
+    public abstract void sacar();
 }
