@@ -7,5 +7,8 @@ public class ContaPolpanca extends ContaBancaria{
         super(numeroConta, saldo, titular);
     }
 
-
+    @Override
+    public void depositar(double valor) {
+        setSaldo(valor);
+    }
 }
