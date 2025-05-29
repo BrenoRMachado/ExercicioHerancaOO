@@ -71,4 +71,6 @@ public abstract class ContaBancaria {
         verificarSaldo(valor);
         this.saldo -= valor;
     }
+
+    public abstract double calcularJuros();
 }

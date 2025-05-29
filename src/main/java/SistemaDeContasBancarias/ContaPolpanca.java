@@ -17,4 +17,10 @@ public class ContaPolpanca extends ContaBancaria{
     {
         retirarValor(valor);
     }
+
+    @Override
+    public double calcularJuros()
+    {
+        return 100;
+    }
 }
