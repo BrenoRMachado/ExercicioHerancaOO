@@ -18,8 +18,8 @@ public class ContaCorrente extends ContaBancaria{
     }
 
     @Override
-    public void sacar()
+    public void sacar(double valor)
     {
-
+        retirarValor(valor);
     }
 }

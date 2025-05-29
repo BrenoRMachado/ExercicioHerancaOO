@@ -58,5 +58,17 @@ public abstract class ContaBancaria {
         this.saldo -= 10;
     }
 
-    public abstract void sacar();
+    public abstract void sacar(double valor);
+    public void verificarSaldo(double valor)
+    {
+        if((this.saldo - valor ) < 0  )
+        {
+            throw new IllegalArgumentException("Saldo insuficiente!");
+        }
+    }
+    public void retirarValor(double valor)
+    {
+        verificarSaldo(valor);
+        this.saldo -= valor;
+    }
 }
