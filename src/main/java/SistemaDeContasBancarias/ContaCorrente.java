@@ -10,6 +10,9 @@ public class ContaCorrente extends ContaBancaria{
 
     @Override
     public void depositar(double valor) {
+        if (valor <= 0){
+            throw new IllegalArgumentException("Valor não pode ser negativo ou nulo!");
+        }
         setSaldo(valor);
         cobrarTaxa();
     }
