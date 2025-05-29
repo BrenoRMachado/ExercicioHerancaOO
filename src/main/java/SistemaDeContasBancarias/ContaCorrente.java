@@ -13,8 +13,8 @@ public class ContaCorrente extends ContaBancaria{
         if (valor <= 0){
             throw new IllegalArgumentException("Valor não pode ser negativo ou nulo!");
         }
+        cobrarTaxa(valor);
         setSaldo(valor);
-        cobrarTaxa();
     }
 
     @Override

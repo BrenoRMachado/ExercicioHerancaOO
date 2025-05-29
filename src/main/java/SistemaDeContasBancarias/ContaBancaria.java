@@ -49,9 +49,9 @@ public abstract class ContaBancaria {
     }
 
     public abstract void depositar(double valor);
-    public void cobrarTaxa()
+    public void cobrarTaxa(double valor)
     {
-        if(saldo < 10)
+        if(valor < 10)
         {
             throw new IllegalArgumentException("Saldo insuficiente!");
         }
