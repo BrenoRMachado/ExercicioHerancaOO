@@ -1,17 +1,16 @@
 package SistemaDeContasBancarias;
 
 public abstract class ContaBancaria {
-
-    private String  numeroConta;
+    private String numeroConta;
     private double saldo;
     private String titular;
 
-    public ContaBancaria(String numeroConta, int saldo, String titular)
-    {
+    public ContaBancaria(String numeroConta, double saldo, String titular) {
         setNumeroConta(numeroConta);
         setSaldo(saldo);
         setTitular(titular);
     }
+
     public String getNumeroConta() {
         return this.numeroConta;
     }
@@ -29,7 +28,7 @@ public abstract class ContaBancaria {
     }
 
     public void setSaldo(double saldo) {
-        if(saldo > 0)
+        if(saldo < 0)
         {
             throw new IllegalArgumentException("O saldo não pode ser negativo!");
         }
@@ -48,29 +47,8 @@ public abstract class ContaBancaria {
         this.titular = titular;
     }
 
+
     public abstract void depositar(double valor);
-    public void cobrarTaxa(double valor)
-    {
-        if(valor < 10)
-        {
-            throw new IllegalArgumentException("Saldo insuficiente!");
-        }
-        this.saldo -= 10;
-    }
-
     public abstract void sacar(double valor);
-    public void verificarSaldo(double valor)
-    {
-        if((this.saldo - valor ) < 0  )
-        {
-            throw new IllegalArgumentException("Saldo insuficiente!");
-        }
-    }
-    public void retirarValor(double valor)
-    {
-        verificarSaldo(valor);
-        this.saldo -= valor;
-    }
-
     public abstract double calcularJuros();
 }
