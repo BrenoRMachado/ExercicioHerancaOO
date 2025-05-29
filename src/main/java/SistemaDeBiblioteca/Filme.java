@@ -8,6 +8,6 @@ public class Filme extends MaterialBiblioteca {
 
     @Override
     public String calcularDataDevolucao(String dataEmprestimo) {
-        return "Data de devolução do filme (5 dias)";
+        return "A data de devolução do filme é em 5 dias após " + dataEmprestimo;
     }
 }

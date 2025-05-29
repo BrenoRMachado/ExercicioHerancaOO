@@ -8,6 +8,6 @@ public class Revista extends MaterialBiblioteca {
 
     @Override
     public String calcularDataDevolucao(String dataEmprestimo) {
-        return "Data de devolução da revista (7 dias)";
+        return "A data de devolução da revista é em 7 dias após " + dataEmprestimo;
     }
 }
