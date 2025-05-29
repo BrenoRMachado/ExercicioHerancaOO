@@ -1,7 +1,7 @@
 package SistemaDeContasBancarias;
 
 public class ContaCorrente extends ContaBancaria{
-    
+
     public ContaCorrente(String numeroConta, double saldo, String titular)
     {
         super(numeroConta, saldo, titular);
@@ -35,4 +35,4 @@ public class ContaCorrente extends ContaBancaria{
         setSaldo(getSaldo() - 10.00);
     }
 }
-}
+
